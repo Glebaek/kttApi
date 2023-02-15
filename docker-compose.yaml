@@ -1,0 +1,14 @@
+version: '2'
+services:
+  kttapi:
+    container_name: kttapi
+    build:
+      dockerfile: Dockerfile
+    image: kttapi-docker:latest
+    ports:
+      - 9090:8080
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
