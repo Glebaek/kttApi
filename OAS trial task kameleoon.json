@@ -1,0 +1,395 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "TrialTask Api for web interface",
+    "version": "0.1",
+    "title": "kttApi"
+  },
+  "paths": {
+    "/votes": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model5"
+            },
+            "x-examples": {
+              "application/json": "{\"voteValue\":\"true\",\"votedQuoteID\":\"1\",\"votedByAccID\":\"2\",\"votedOnTime\":\"14.50.34\"}"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Create a vote",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/quotes/{id}": {
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model1"
+            },
+            "x-examples": {
+              "application/json": "{\"textQuote\":\"Be yourself, be a human.\",\"createdByLogin\":\"brot\"}"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Replace a quote",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model2"
+            },
+            "x-examples": {
+              "application/json": "{\"textQuote\":\"Be yourself, be a human.\",\"createdByLogin\":\"brot\"}"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete a quote",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/quotes/login/{createdByLogin}": {
+      "get": {
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Get all quotes by one login",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/quotes": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model0"
+            },
+            "x-examples": {
+              "application/json": "{\"textQuote\":\"Be yourself, be beer.\",\"createdByLogin\":\"brot\"}"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Create a quote",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/accounts/{id}": {
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model3"
+            },
+            "x-examples": {
+              "application/json": "{\"login\":\"glebaek\",\"password\":\"ggg123\"}"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Replace an account by ID",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model4"
+            },
+            "x-examples": {
+              "application/json": "{\"login\":\"glebaek\",\"password\":\"ggg123\"}"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete an account by ID",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/accounts": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model7"
+            },
+            "x-examples": {
+              "application/json": "{\"login\":\"brot\",\"password\":\"brot099\"}"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Create an account",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/quotes/random": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model2"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Get a random quote",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/votes/{id}": {
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/hal+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Model5"
+            },
+            "x-examples": {
+              "application/json": "{\"voteValue\":\"true\",\"votedQuoteID\":\"1\",\"votedByAccID\":\"2\"}"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Replace a vote",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Model0": {
+      "properties": {
+        "textQuote": {
+          "type": "string"
+        },
+        "createdOnTime": {
+          "type": "string"
+        },
+        "createdByLogin": {
+          "type": "string"
+        }
+      }
+    },
+    "Model1": {
+      "properties": {
+        "textQuote": {
+          "type": "string"
+        },
+        "createdOnTime": {
+          "type": "string"
+        },
+        "createdByLogin": {
+          "type": "string"
+        }
+      }
+    },
+    "Model2": {
+      "properties": {
+        "textQuote": {
+          "type": "string"
+        },
+        "createdOnTime": {
+          "type": "string"
+        },
+        "createdByLogin": {
+          "type": "string"
+        }
+      }
+    },
+    "Model3": {
+      "properties": {
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Model4": {
+      "properties": {
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Model5": {
+      "properties": {
+        "voteValue": {
+          "type": "boolean"
+        },
+        "votedQuoteID": {
+          "type": "integer"
+        },
+        "votedByAccID": {
+          "type": "integer"
+        },
+        "votedOnTime": {
+          "type": "string"
+        }
+      }
+    },
+    "Model6": {
+      "properties": {
+        "voteValue": {
+          "type": "boolean"
+        },
+        "votedQuoteID": {
+          "type": "integer"
+        },
+        "votedByAccID": {
+          "type": "integer"
+        },
+        "votedOnTime": {
+          "type": "string"
+        }
+      }
+    },
+    "Model7": {
+      "properties": {
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
